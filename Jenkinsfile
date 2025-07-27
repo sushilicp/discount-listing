@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/sushilicp/discount-listing.git'
+                cleanWs()
+                git branch: 'main', url: 'https://github.com/sushilicp/discount-listing.git'
             }
         }
         stage('Build') {
