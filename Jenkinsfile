@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'python3 -m venv venv'
+                bat 'python -m venv venv'
                 bat '. venv/bin/activate && pip install -r requirements.txt'
             }
         }
