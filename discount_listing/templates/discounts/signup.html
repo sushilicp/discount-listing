@@ -1,0 +1,11 @@
+{% extends 'discounts/base.html' %}
+{% block content %}
+<h2 class="text-3xl font-extrabold text-blue-700 mb-6 text-center">Shop Signup</h2>
+<form method="post" class="max-w-lg mx-auto bg-blue-50 rounded-lg shadow p-8 space-y-6">
+    {% csrf_token %}
+    <div class="space-y-4">
+        {{ form.as_p }}
+    </div>
+    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white font-bold py-2 rounded-lg shadow hover:from-blue-700 hover:to-blue-500 transition">Sign Up</button>
+</form>
+{% endblock %}
