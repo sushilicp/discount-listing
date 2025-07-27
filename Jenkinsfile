@@ -15,12 +15,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat '. venv/bin/activate && python manage.py test'
+                bat '.venv/bin/activate && python manage.py test'
             }
         }
         stage('Deploy') {
             steps {
-                bat '. venv/bin/activate && gunicorn --bind 0.0.0.0:8000 discount_listing.wsgi'
+                bat '.venv/bin/activate && gunicorn --bind 0.0.0.0:8000 discount_listing.wsgi'
             }
         }
     }
