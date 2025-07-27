@@ -10,17 +10,17 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'python -m venv venv'
-                bat '.venv/bin/activate && pip install -r requirements.txt'
+                bat 'venv\\Scripts\\activate.bat && pip install -r requirements.txt'
             }
         }
         stage('Test') {
             steps {
-                bat '.venv/bin/activate && python manage.py test'
+                bat 'venv\\Scripts\\activate.bat && python manage.py test'
             }
         }
         stage('Deploy') {
             steps {
-                bat '.venv/bin/activate && gunicorn --bind 0.0.0.0:8000 discount_listing.wsgi'
+                bat 'venv\\Scripts\\activate.bat && gunicorn --bind 0.0.0.0:8000 discount_listing.wsgi'
             }
         }
     }
