@@ -24,8 +24,8 @@ pipeline {
                 def api_token = '4937b429de5a703d5226bc891ff2fb3409685577'
                 def username = 'sushilicp'
                 bat """
-                curl -X POST --user %username%:%api_token% ^
-                https://www.pythonanywhere.com/api/v0/user/%username%/webapps/%username%.pythonanywhere.com/reload/
+                curl -X POST --user ${username}:${api_token} ^
+                https://www.pythonanywhere.com/api/v0/user/${username}/webapps/${username}.pythonanywhere.com/reload/
                 """
             }
             }
