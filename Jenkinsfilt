@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/discount-listing.git'
+                git 'https://github.com/sushilicp/discount-listing.git'
             }
         }
         stage('Build') {
