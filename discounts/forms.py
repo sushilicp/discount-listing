@@ -9,7 +9,7 @@ class ShopForm(forms.ModelForm):
 class DiscountForm(forms.ModelForm):
     class Meta:
         model = Discount
-        fields = ['shop', 'title', 'description', 'amount', 'is_percentage', 'category', 'start_date', 'end_date']
+        fields = ['shop', 'title', 'description', 'amount', 'is_percentage', 'category', 'is_featured', 'start_date', 'end_date']
         widgets = {
             'start_date': forms.DateInput(attrs={'type': 'date'}),
             'end_date': forms.DateInput(attrs={'type': 'date'}),
