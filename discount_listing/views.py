@@ -48,6 +48,11 @@ def signup(request):
         form = ShopForm(request.POST)
         if form.is_valid():
             form.save()
+            sentry_sdk.capture_event({
+                'message': 'User signed up',
+                'level': 'info',
+                'extra': {'username': form.cleaned_data['username']}
+            })
             return redirect('home')
     else:
         form = ShopForm()
@@ -58,6 +63,11 @@ def add_discount(request):
         form = DiscountForm(request.POST)
         if form.is_valid():
             form.save()
+            sentry_sdk.capture_event({
+                'message': 'Discount added',
+                'level': 'info',
+                'extra': {'shop_name': form.cleaned_data['shop'].name}
+            })
             return redirect('home')
     else:
         form = DiscountForm(initial={'shop': 1})  # Simplified for demo; use authentication in production
