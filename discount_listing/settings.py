@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-3!%%x6-zrbo0w2)dt%xd7z_hj*pkys1ei+dq!+@l+6z3f+7!4^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# discount_listing/settings.py
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'sushilicp.pythonanywhere.com',
+]
 
 
 # Application definition
